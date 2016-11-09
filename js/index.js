@@ -1,14 +1,9 @@
 $(function(){
-    var $menu=$(".menu");
+     var $menu=$(".menu");
     var $lists=$(".lists");
     var $minNav=$(".nav-box");
     var $shop=$(".shop");
-    var ch=document.documentElement.clientHeight;
-    $(window).resize(function () {
-        var cw=document.documentElement.clientWidth;
-        console.log(cw);
-        if(cw<725){
-            $menu.click(function(){
+    $menu.click(function(){
                 var $ids=$menu.attr("id");
                 if($ids=='active'){
                     $menu.removeAttr("id");
@@ -23,8 +18,7 @@ $(function(){
                     $shop.css("transition","all 0.3s");
                 }
             });
-        }
-    });
+
 
 
     // banner轮播图
@@ -111,6 +105,21 @@ $(function(){
         }
         now=next=$index;
     }
+    // var currentNum=0;
+    // var nextNum=0;
+    // setInterval(function(){
+    //     nextNum++;
+    //     if(nextNum==3){
+    //         nextNum=0;
+    //     }
+    //     $(".lists:eq("+currentNum+")").animate({width:"80%",height:"80%"}).css("zIndex",3);
+    //      $(".lists:eq("+nextNum+")").animate({left:0},function(){
+    //         $(".lists:eq("+nextNum+")").css({left:"100%",width:"100%",height:"100%"})
+
+
+    //      }).css("zIndex",1)
+
+    // },3000)
 
     //底下链接的动画
     var $cols=$(".link .cols");

@@ -51,7 +51,6 @@ a {
 .min-nav {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 .min-nav .nav {
   height: 100%;
@@ -59,6 +58,7 @@ a {
   line-height: 44px;
   text-align: justify;
 }
+
 .min-nav .nav:after {
   content: "";
   display: inline-block;
@@ -156,7 +156,7 @@ a {
 }
 .banner-box {
   width: 100%;
-  height: 540px;
+  height:580px;
   position: relative;
   overflow: hidden;
 }
@@ -175,7 +175,7 @@ a {
   overflow: hidden;
 }
 .banner-box .row > div > a {
-  display: block;
+  display: block!important;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -206,21 +206,22 @@ a {
   right: 0;
   margin: auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 735px) {
   .banner-box .row > div:nth-child(1) a {
-    background: url("../image/macbookpro_small.jpg") bottom no-repeat;
+    background:#fff url("../image/macbookpro_small.jpg") bottom no-repeat;
   }
   .banner-box .row > div:nth-child(1) a span {
     color: #000;
+    font-size: 30px;
   }
   .banner-box .row > div:nth-child(2) a {
-    background: url("../image/iphone_large.jpg") center no-repeat;
+    background: url("../image/iphone_large.jpg")  no-repeat;
   }
   .banner-box .row > div:nth-child(3) a {
-    background: url("../image/event_small.jpg") center no-repeat;
+    background: url("../image/event_small.jpg") 58% 32% no-repeat;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 735px) and (max-width: 1068px) {
   .banner-box .row > div:nth-child(1) a {
     background: url("../image/macbookpro_medium.jpg") bottom no-repeat;
     background-size: 95%;
@@ -232,13 +233,10 @@ a {
     background: url("../image/iphone_large.jpg") center no-repeat;
   }
   .banner-box .row > div:nth-child(3) a {
-    background: url("../image/event_medium.jpg") center no-repeat;
+    background: url("../image/event_medium.jpg") 58% 32% no-repeat;
   }
 }
-@media screen and (min-width: 1024px) {
-  .banner-box {
-    width: 100%;
-  }
+@media screen and (min-width: 1068px) {
   .banner-box .row > div:nth-child(1) a {
     background: url("../image/macbookpro_large.jpg") bottom no-repeat;
     background-size: 95%;
@@ -247,12 +245,12 @@ a {
     color: #000;
   }
   .banner-box .row > div:nth-child(2) a {
-    background: url("../image/iphone_large.jpg") center no-repeat;
-    background-size: 100%;
+    background:#000 url("../image/iphone_large.jpg") bottom center no-repeat;
+    background-size: contain;
   }
   .banner-box .row > div:nth-child(3) a {
-    background: url("../image/event_large.jpg") center no-repeat;
-    background-size: 100%;
+    background: url("../image/event_large.jpg") 58% 32% no-repeat;
+    background-size: cover;
   }
 }
 .btnbox {
@@ -273,6 +271,7 @@ a {
   float: left;
   margin-right: 10px;
 }
+
 .btn {
   width: 100%;
   height: 60px;
@@ -307,6 +306,9 @@ a {
   float: right;
   margin-right: 50px;
 }
+#active{
+  background: #ccc;
+}
 /*3*/
 .container-fluid:nth-child(3) {
   height: 200px;
@@ -321,22 +323,22 @@ a {
   border-right: 2px solid #ffffff;
   display: block;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1068px) {
   .container-fluid:nth-child(3) div:nth-child(1) > a {
-    background: url("../image/nike_watch_large.jpg") center;
+    background: url("../image/nike_watch_small.jpg") center;
   }
   .container-fluid:nth-child(3) div:nth-child(2) a {
-    background: url("../image/airpods_large.jpg") center;
+    background: url("../image/airpods_small.jpg") center;
   }
   .container-fluid:nth-child(3) div:nth-child(3) a {
-    background: url("../image/iphone_upgrade_large.jpg") center;
+    background: url("../image/iphone_upgrade_small.jpg") center;
   }
   .container-fluid:nth-child(3) div:nth-child(4) a {
-    background: url("../image/accessibility_large.jpg") center;
+    background: url("../image/accessibility_small.jpg") center;
     border-right: 0px solid red;
   }
 }
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1068px) and (min-width: 735px) {
   .container-fluid:nth-child(3) div:nth-child(1) > a {
     background: url("../image/nike_watch_medium.jpg") center no-repeat;
   }
@@ -351,18 +353,18 @@ a {
     border-right: 0px solid red;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 735px) {
   .container-fluid:nth-child(3) div[class*=col-s]:nth-child(1) > a {
-    background: url("../image/nike_watch_small.jpg") center;
+    background: url("../image/nike_watch_large.jpg") center no-repeat;
   }
   .container-fluid:nth-child(3) div[class*=col-s]:nth-child(2) a {
-    background: url("../image/airpods_small.jpg") center;
+    background: url("../image/airpods_large.jpg") center no-repeat;
   }
   .container-fluid:nth-child(3) div[class*=col-s]:nth-child(3) a {
-    background: url("../image/iphone_upgrade_small.jpg") center;
+    background: url("../image/iphone_upgrade_large.jpg") center no-repeat;
   }
   .container-fluid:nth-child(3) div[class*=col-s]:nth-child(4) a {
-    background: url("../image/accessibility_small.jpg") center;
+    background: url("../image/accessibility_large.jpg") center no-repeat;
     border-right: 0px solid red;
   }
 }
@@ -379,6 +381,24 @@ a {
   float: left;
   margin-right: 80px;
 }
+.desbox{
+  width: 100%;height: auto;background: #f2f2f2;
+}
+.des{
+  max-width: 1024px;
+  border-bottom: 1px solid #e3e3e3;
+  color:#999;
+  padding:16px 0 11px;
+  margin: 0 auto;
+}
+.des>ul>li{
+  font-size: 12px;
+  font-weight:400;
+  line-height: 1.333333;
+  padding-bottom: 5px;
+  text-align: inherit;
+}
+
 /* 链接结束 */
 /* 底部开始 */
 .footer {
@@ -557,7 +577,7 @@ a {
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   /* 友情链接开始 */
   .link {
-    height: 260px;
+    height: auto;
   }
   .link .main-link {
     max-width: 1024px;
@@ -610,7 +630,7 @@ a {
 @media screen and (min-width: 1024px) {
   /* 友情链接开始 */
   .link {
-    height: 260px;
+    height: auto;
   }
   .link .main-link {
     max-width: 1024px;
