@@ -1,0 +1,134 @@
+@import "var.less";
+*{
+  box-sizing: border-box;
+}
+//最小屏
+.container{
+  &{
+    display: block;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  &>.row{
+    display: block;
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+    .clear;
+  }
+  &-fluid{
+    display: block;
+    width:100%;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  &-fluid>.row{
+    display: block;
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+    .clear;
+  }
+}
+
+.container:after {
+  content: '';
+  line-height: 0;
+  height: 0;
+  clear: both;
+  display: block;
+}
+
+.container-fluid:after {
+  content: '';
+  line-height: 0;
+  height: 0;
+  clear: both;
+  display: block;
+}
+[class*='col-'] {
+  display: block;
+  float: left;
+}
+.loop();
+.col-s-hide {
+  display: none;
+}
+//中屏
+@media screen and (min-width: @num2){
+  .container{
+    width:@num2 ;
+    margin:auto;
+  }
+  .loop(m);
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+
+}
+
+//中屏 1024
+@media screen and (min-width: @num3){
+  .container{
+    width: @num3;
+    margin:auto;
+  }
+  .loop(l);
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+
+
+}
+//栅格化的核心代码
+.loop(@type:s,@i:1) when (@i<=@cols){
+  .container>.row.col-@{type}-@{i}{
+    float:left;
+    width:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-@{i}{
+    float:left;
+    width:@i/@cols*100%;
+  }
+  .loop(@type,@i+1);
+}
+
+//清除浮动
+.clear(){
+  &:before,&:after{
+    content:"";
+    display: block;
+  }
+  &:after{
+    content:"";
+    clear:both;
+    line-height: 0;
+    height:0;
+    display: block;
+  }
+}
+
+//图片以及内容的一些响应
+[img-response] {
+  max-width: 100%;
+}
+[block-center] {
+  display: block;
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+[text-center] {
+  text-align: center;
+}
