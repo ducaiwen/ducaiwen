@@ -1,0 +1,729 @@
+body,ul,li,h3{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+h1,h2,h3{
+  list-style: none;
+}
+body{
+  position: relative;
+  min-width: 320px;
+  font-family: "微软雅黑", Arial;
+}
+a{
+  text-decoration: none;
+}
+//头部
+.nav-box{
+  height:44px;
+  background:#000;
+  opacity: 0.8;
+  position: relative;
+  z-index: 999;
+}
+.max-nav{
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: justify;
+}
+.max-nav:after{
+  content: "";
+  display: inline-block;
+  height: 0;
+  line-height: 0;
+  width:100%;
+}
+.nav-box .max-nav li{
+  line-height: 44px;
+  height:100%;
+  display: inline-block;
+}
+.nav-box .max-nav li a{
+  height: 100%;
+  font-size:16px;
+  z-index: 1;
+  color: #ffffff;
+  transition: color 0.2s;
+}
+.nav-box .max-nav li a:hover{
+  color: #bbb;
+}
+.min-nav{
+  width: 100%;
+  height: 100%;
+}
+.min-nav .nav{
+  height: 100%;
+  margin: 0 auto;
+  line-height: 44px;
+  text-align: justify;
+}
+.min-nav .nav:after{
+  content: "";
+  display: inline-block;
+  width:100%;
+  line-height: 0;
+  height: 0;
+}
+.min-nav .nav>div{
+  display: inline-block;
+  font-size:16px;
+  color: #fff;
+  vertical-align: middle;
+}
+.min-nav .nav .menu{
+  width: 42px;
+  height:42px;
+  line-height: 44px;
+  cursor: pointer;
+}
+.min-nav .nav .menu span{
+  width: 70%;
+  display: inline-block;
+  height: 0;
+  border-top: 1px solid #fff;
+  margin-top:14px;
+  margin-left: 3px;
+  margin-right: 3px;
+  float: left;
+  transition: all 0.3s;
+}
+.min-nav .nav .menu#active span:nth-child(1){
+  transform: translateY(7px) rotate(135deg);
+}
+.min-nav .nav .menu#active span:nth-child(2){
+  transform: translateY(-7px) rotate(45deg);
+}
+.nav-box .min-nav .lists{
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 40px;
+  background: #000!important;
+  display: none;
+  transition: all 0.3s;
+  z-index: 999;
+}
+.nav-box .lists li{
+  height: 48px;
+  width: 80%;
+  border-bottom: 1px solid #ffffff;
+}
+.nav-box .lists li a{
+  width: 100%;
+  height:100%;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 48px;
+  transition: all 0.3s;
+}
+.nav-box .lists li:nth-last-child(1) a{
+  font-size: 18px;
+}
+.nav-box .lists li:hover a{
+  color: #bbbbbb;
+}
+@media screen and (max-width: 768px) {
+  .nav-box .max-nav{
+    display: none;
+  }
+  .nav-box .min-nav{
+    height: 100%;
+    text-align: justify;
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-box .max-nav{
+    display: block;
+  }
+  .nav-box .min-nav{
+    display: none;
+  }
+}
+
+//banner
+.container-fluid:nth-child(2){
+  margin-right: 0!important;
+  margin-left: 0!important;
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+.container-fluid:nth-child(2) .row{
+  margin-right: 0!important;
+  margin-left: 0!important;
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+.banner-box{
+  width:100%;
+  height:588px;
+  position: relative;
+  overflow: hidden;
+}
+.banner-box .row{
+  width:100%;
+  height:100%;
+  background: #fff;
+  position: relative;
+}
+.banner-box .row div{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  overflow: hidden;
+}
+.banner-box .row>div>a{
+  display:block;
+  width:100%;
+  height:100%;
+  position: absolute;
+  transform:translateX(0px) scale(1,1);
+}
+.banner-box .row>div>a>span{
+  display: inline-block;
+  position: absolute;
+}
+.banner-box .row>div>a>span:nth-child(1){
+  width:auto;
+  height:24px;
+  top:40px;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.banner-box .row>div>a>span:nth-child(2){
+  width:auto;
+  height:48px;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  color:#fff;
+  top:90px;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
+//title图
+.banner-box .row>div:nth-child(1) a span:nth-child(1){
+  background: url("../image/logo_macbookpro_large.png") center no-repeat;
+}
+.banner-box .row>div:nth-child(2) a span:nth-child(1){
+  background: url("../image/logo_iphone_large.png") center no-repeat
+}
+.banner-box .row>div:nth-child(3) a span:nth-child(1){
+  height:31px;
+  background: url("../image/logo_event_large.png") center no-repeat;
+}
+//banner适应屏幕图片
+@media screen and (max-width: 768px){
+  .banner-box .row>div:nth-child(1) a{
+    background: url("../image/macbookpro_small.jpg") bottom no-repeat;
+  }
+  .banner-box .row>div:nth-child(1) a span{
+    color: #000;
+  }
+  .banner-box .row>div:nth-child(2) a{
+    background: url("../image/iphone_large.jpg") center no-repeat;
+    background-size: cover;
+  }
+  .banner-box .row>div:nth-child(3) a{
+    background: url("../image/event_small.jpg") 58% 32% no-repeat;
+  }
+  .img-list div[class*=col-s]:nth-child(1){
+    background-size: 100% auto;
+    background: url("../image/nike_watch_small.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-s]:nth-child(2){
+    background-size: 100% auto;
+    background: url("../image/airpods_small.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-s]:nth-child(3){
+    background-size: 100% auto;
+    background: url("../image/iphone_upgrade_small.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-s]:nth-child(4){
+    background-size: 100% auto;
+    background: url("../image/accessibility_small.jpg") center no-repeat;
+  }
+  .des{
+    padding:0 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:1024px){
+  .banner-box .row>div:nth-child(1) a{
+    background: url("../image/macbookpro_medium.jpg") bottom no-repeat;
+    background-size: 95%;
+  }
+  .banner-box .row>div:nth-child(1) a span{
+    color: #000;
+  }
+  .banner-box .row>div:nth-child(2) a{
+    background: url("../image/iphone_large.jpg") center no-repeat;
+    background-size: cover;
+  }
+  .banner-box .row>div:nth-child(3) a{
+    background: url("../image/event_medium.jpg") 58% 32% no-repeat;
+  }
+  .img-list div[class*=col-m]:nth-child(1){
+    background-size: 100% auto;
+    background: url("../image/nike_watch_medium.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-m]:nth-child(2){
+    background-size: 100% auto;
+    background: url("../image/airpods_medium.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-m]:nth-child(3){
+    background-size: 100% auto;
+    background: url("../image/iphone_upgrade_medium.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-m]:nth-child(4){
+    background-size: 100% auto;
+    background: url("../image/accessibility_medium.jpg") center no-repeat;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .banner-box .row>div:nth-child(1) a{
+    background:#fff url("../image/macbookpro_large.jpg") no-repeat;
+    background-position: center bottom;
+    background-size:contain;
+  }
+  .banner-box .row>div:nth-child(1) a span{
+    color: #000;
+  }
+  .banner-box .row>div:nth-child(2) a{
+    background:#000 url("../image/iphone_large.jpg") no-repeat;
+    background-position: center bottom;
+    background-size:contain;
+    left:100%;
+  }
+  .banner-box .row>div:nth-child(3) a{
+    background: url("../image/event_large.jpg") no-repeat;
+    background-position:50% 38%;
+    background-size: cover;
+    left:100%;
+  }
+  .img-list div[class*=col-l]:nth-child(1){
+    background-size: 100% auto;
+    background: url("../image/nike_watch_large.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-l]:nth-child(2){
+    background-size: 100% auto;
+    background: url("../image/airpods_large.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-l]:nth-child(3){
+    background-size: 100% auto;
+    background: url("../image/iphone_upgrade_large.jpg") center no-repeat;
+  }
+  .img-list div[class*=col-l]:nth-child(4){
+    background-size: 100% auto;
+    background: url("../image/accessibility_large.jpg") center no-repeat;
+  }
+}
+
+//轮播点
+.btnbox{
+  width: 180px;
+  height:4px;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  margin-bottom: 30px;
+  z-index: 999;
+}
+.btnbox .progress{
+  width: 0%;
+  height:100%;
+  background:red;
+}
+.btnbox .circle{
+  width:50px;
+  height:4px;
+  background: #333;
+  opacity: 0.8;
+  float:left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.btn-left,.btn-right{
+  position: absolute;
+  top:0;bottom: 0;
+  margin:auto;
+  width:60px;height:60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  background:rgba(180,180,180,0.25);
+  font-size: 40px;
+  color:#848484;
+  opacity: 0;
+  transition:opacity .5s linear;
+}
+.btn-left{
+  left:20px;
+}
+.btn-right{
+  right:20px
+}
+.left{
+  height:100%;width:25%;
+  position: absolute;left:0;top:0;
+  z-index:1000;
+
+}
+.right{
+  height:100%;width:25%;
+  position: absolute;right:0;top:0;
+  z-index:1000;
+
+}
+.left:hover>.btn-left{
+  opacity: 1;
+}
+.right:hover>.btn-right{
+  opacity: 1;
+}
+
+//列表图
+.container-fluid:nth-child(3){
+  border-bottom: 2px solid #fff;
+  position: relative;
+}
+.container-fluid:nth-child(3) .row>div{
+  box-sizing: border-box;
+  border-top:2px solid #fff;
+  border-right:2px solid #fff;
+  position: relative;
+  float: left;
+  display: block;
+  height:200px;
+}
+.des-box{
+  width:100%;
+  height:auto;
+  background: #f2f2f2;
+}
+.des{
+  max-width: 1024px;
+  border-bottom: 1px solid #e3e3e3;
+  color:#999;
+  padding:16px 0 11px;
+  margin: 0 auto;
+}
+.des>ul>li{
+  font-size: 12px;
+  font-weight:400;
+  line-height: 1.333333;
+  padding-bottom: 5px;
+  text-align: inherit;
+}
+
+//链接开始
+.link{
+  background: #f2f2f2;
+}
+.link .main-link .row{
+  width:100%;
+  height:100%;
+}
+.link .main-link .row div{
+  float: left;
+  margin-right:80px;
+}
+
+//底部
+.footer{
+  background: #f2f2f2;
+  overflow: hidden;
+}
+.footer ul li{
+  display: inline-block;
+  color:#999;
+  font-size: 10px;
+}
+.footer ul:nth-child(1)>a{
+  ccolor:#08c;
+}
+.footer ul:nth-child(1)>a:hover{
+  text-decoration: underline;
+  color:#333;
+}
+.footer ul:last-child a{
+  color:#999;
+}
+.footer ul:last-child a:hover{
+  text-decoration: underline;
+}
+
+
+//max footer
+.footer .max-footer{
+  max-width: 980px;
+  height: auto;
+  padding: 20px 0 24px;
+  margin: 0 auto;
+}
+.footer .max-footer ul:nth-child(1){
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.footer .max-footer ul:nth-child(2) li:nth-child(1)~li{
+  padding: 0 8px;
+  color: #d6d6d6;
+}
+.footer .max-footer ul:nth-child(2) li:nth-child(1)~li a{
+  color: #666;
+}
+.footer .max-footer ul:nth-child(2) li:nth-child(1)~li:last-child a{
+  color: #666;
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+  background: url("../image/china.png") no-repeat;
+  padding-left: 21px;
+}
+.footer .max-footer ul:nth-child(2) li:nth-child(1)~li a:hover{
+  text-decoration: underline;
+  color: #333;
+}
+.footer .max-footer ul:nth-child(2) li:last-child{
+  float: right;
+  vertical-align: middle;
+}
+
+//min-footer
+.footer .min-footer{
+  min-width: 440px;
+  height: auto;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+.footer .min-footer ul:nth-child(2){
+  padding: 10px 0;
+}
+.footer .min-footer ul:nth-child(2) li{
+  vertical-align: middle;
+}
+.footer .min-footer ul:nth-child(2) a{
+  color: #666;
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+  background: url("../image/china.png") no-repeat;
+  padding-left: 21px;
+}
+.footer .min-footer ul:nth-child(2) a:hover{
+  text-decoration: underline;
+}
+.footer .min-footer ul:nth-child(4) li{
+  padding: 0 8px;
+  color: #d6d6d6;
+}
+.footer .min-footer ul:nth-child(4) li:nth-child(1){
+  padding-left: 0;
+}
+.footer .min-footer ul:nth-child(4) li a{
+  color: #777;
+}
+.footer .min-footer ul:nth-child(4) li a:hover{
+  text-decoration: underline;
+  color: #333;
+}
+
+//友情链接适应屏幕变化
+@media screen and (max-width: 768px) {
+  .link .main-link .row{
+    margin-left: 0!important;
+  }
+  .link .main-link .row .cols{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: -30px;
+  }
+  .link .main-link .row h3{
+    width: 100%;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e3e3e3;
+    margin-right: -100px;
+    position: relative;
+    opacity: 0.7;
+  }
+  .link .main-link .row h3 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #111;
+  }
+  .link .main-link .row h3:hover{
+    opacity: 0.8;
+  }
+  .link .main-link .row h3:after{
+    content: "+";
+    position: absolute;
+    right: 0;
+    top:0;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+
+  }
+
+  .link .main-link .row ul{
+    display: none;
+  }
+  .link .main-link .row ul li{
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    opacity: 0.7;
+  }
+  .link .main-link .row ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #111;
+  }
+  .link .main-link .row ul li a:hover{
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+  .footer .max-footer{
+    display: none;
+  }
+  .footer .min-footer{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .link .main-link{
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 32px 22px 20px;
+    box-sizing: border-box;
+  }
+  .link .main-link .row{
+    width: 100%;
+    height: 100%;
+    margin: 0!important;
+    line-height: 20px;
+  }
+  .link .main-link .row h3{
+    height: 20px;
+    font-size: 11px;
+    opacity: 0.9;
+  }
+  .link .main-link .row h3 a{
+    color: #111;
+  }
+  .link .main-link .row ul li{
+    height: 20px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .link .main-link .row ul li a{
+    color: #111;
+    opacity: 0.6;
+  }
+  .link .main-link .row ul li a:hover{
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+  .link .main-link .row h3:nth-of-type(2){
+    margin-top: 20px;
+  }
+  .footer .max-footer{
+    display: block;
+  }
+  .footer .min-footer{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .link .main-link{
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 32px 22px 20px;
+    box-sizing: border-box;
+  }
+  .link .main-link .row{
+    width: 100%;
+    height: 100%;
+    margin: 0!important;
+    line-height: 20px;
+  }
+  .link .main-link .row h3{
+    height: 20px;
+    font-size: 11px;
+    opacity: 0.9;
+  }
+  .link .main-link .row h3 a{
+    color: #111;
+  }
+  .link .main-link .row ul li{
+    height: 20px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .link .main-link .row ul li a{
+    color: #111;
+    opacity: 0.6;
+  }
+  .link .main-link .row ul li a:hover{
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+  .link .main-link .row h3:nth-of-type(2){
+    margin-top: 20px;
+  }
+  .footer .max-footer{
+    display: block;
+  }
+  .footer .min-footer{
+    display: none;
+  }
+}
+
+/* 小屏头部动画 */
+.header .min-nav .nav .menu#active span:nth-child(1){
+  transform: translateY(4px) rotate(45deg);
+}
+.header .min-nav .nav .menu#active span:nth-child(2){
+  transform: translateY(-4px) rotate(135deg);
+}
+
+/* 小屏链接动画 */
+.link .main-link .row .cols ul#active{
+  display: block;
+}
+.link .main-link .row  .cols h3#active:after{
+  transform: rotate(-45deg);
+}
+
+.main-footer{
+  box-sizing: inherit;
+  padding:0 22px;
+  margin:0 auto;
+  background: #f2f2f2;
+}
